@@ -1,0 +1,94 @@
+# ================================================================== #
+#  NLP2SQL Module Configuration                                        #
+#  All NLP2SQL-specific keys consolidated here.                        #
+#  Shared infrastructure keys (PROJECT_ROOT, audit queue, etc.)       #
+#  are inherited from ai_framework_module_configurations.yaml          #
+# ================================================================== #
+
+# ------------------------------------------------------------------ #
+#  Environment                                                         #
+# ------------------------------------------------------------------ #
+NO_PROXY_ENV: "localhost,127.0.0.1,::1,10.170.80.113"
+PROJECT_ROOT: ""   # Absolute path to the project root
+
+# ------------------------------------------------------------------ #
+#  CORS                                                                #
+# ------------------------------------------------------------------ #
+origins: "*"
+methods: "*"
+headers: "*"
+
+# ------------------------------------------------------------------ #
+#  NLP2SQL Vector / Metadata Database                                  #
+#  Stores table embeddings, labels, schemas                           #
+# ------------------------------------------------------------------ #
+NLP2SQL_DB_HOST: ""
+NLP2SQL_DB_PORT: 5432
+NLP2SQL_DB_USER: ""
+NLP2SQL_DB_PASSWORD: ""
+NLP2SQL_DB_NAME: ""
+
+# ------------------------------------------------------------------ #
+#  Target Database                                                     #
+#  The database the generated SQL will be run against                 #
+# ------------------------------------------------------------------ #
+NLP2SQL_TARGET_DB: ""
+
+# ------------------------------------------------------------------ #
+#  AI Framework Database                                               #
+#  Stores model/app metadata, prompts                                 #
+# ------------------------------------------------------------------ #
+AI_SQL_DB_HOSTNAME: ""
+AI_SQL_DB_PORT: 5432
+AI_SQL_DB_USERNAME: ""
+AI_SQL_DB_PASSWORD: ""
+AI_SQL_DB_NAME: ""
+
+# ------------------------------------------------------------------ #
+#  Application Database (DigiDev)                                      #
+#  The live database SQL executes against                             #
+# ------------------------------------------------------------------ #
+DIGI_DEV_DB_NAME: ""
+DIGI_DEV_DB_USER: ""
+DIGI_DEV_DB_PASSWORD: ""
+DIGI_DEV_DB_HOST: ""
+DIGI_DEV_DB_PORT: 5432
+
+# ------------------------------------------------------------------ #
+#  MCP Server URLs                                                     #
+# ------------------------------------------------------------------ #
+NLP2SQL_LABEL_SERVER_URL: "http://localhost:8001/label_server"
+NLP2SQL_VECTOR_SERVER_URL: "http://localhost:8002/vector_server"
+NLP2SQL_SQL_SERVER_URL: "http://localhost:8003/sql_server"
+
+# ------------------------------------------------------------------ #
+#  Model Parameters                                                    #
+# ------------------------------------------------------------------ #
+NLP2SQL_LABEL_SERVER_N_CTX: 4096
+NLP2SQL_SQL_SERVER_N_CTX: 4096
+
+# ------------------------------------------------------------------ #
+#  Vector Search                                                       #
+# ------------------------------------------------------------------ #
+NLP2SQL_VECTOR_SEARCH_TOP_K: 5
+
+# ------------------------------------------------------------------ #
+#  Embedding Model                                                     #
+# ------------------------------------------------------------------ #
+NLP2SQL_EMBEDDING_MODEL_PATH: ""
+NLP2SQL_EMBEDDING_MODEL_DEVICE: "cpu"
+
+# ------------------------------------------------------------------ #
+#  Apache Ignite Cache                                                 #
+# ------------------------------------------------------------------ #
+IGNITE_HOST: "10.170.80.113"
+IGNITE_PORT: 10800
+
+# ------------------------------------------------------------------ #
+#  Audit Message Queue                                                 #
+# ------------------------------------------------------------------ #
+AUDIT_LOG_HOST: ""
+AUDIT_LOG_PORT: 61616
+AUDIT_LOG_USERNAME: ""
+AUDIT_LOG_PASSWORD: ""
+AUDIT_LOG_QUEUE_NAME: ""
